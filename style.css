@@ -1,0 +1,201 @@
+/* 
+    Project Name: Gradient Calculator
+    Author: Antonette Petallo
+    Date: March 2025
+    Description: A calculator with dynamic gradients and theme options.
+    GitHub: [https://github.com/Zynette]
+*/
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    transition: background 0.5s ease;
+}
+
+.calculator {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 320px;
+}
+
+.display {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #ffffff;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#result {
+    border: none;
+    outline: none;
+    width: 100%;
+    font-size: 24px;
+    text-align: right;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+button {
+    padding: 15px;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+button:hover {
+    background: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+button:active {
+    transform: scale(0.95);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.equals {
+    background: #ff9a9e;
+    color: #fff;
+}
+
+.clear {
+    background: #ff6b6b;
+    color: #fff;
+}
+
+.memory {
+    background: #c3aed6;
+    color: #fff;
+}
+
+/*.extras {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}*/
+
+select {
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    font-size: 16px;
+    background: #ffffff;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Shake effect */
+.shake {
+    animation: shake 0.5s ease;
+}
+
+@keyframes shake {
+    0% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-5px);
+    }
+
+    50% {
+        transform: translateX(5px);
+    }
+
+    75% {
+        transform: translateX(-5px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/* Glow effect on result */
+.glow {
+    animation: glow 1s ease-in-out;
+}
+
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 10px #ff9a9e;
+    }
+
+    50% {
+        box-shadow: 0 0 20px #ff9a9e;
+    }
+
+    100% {
+        box-shadow: 0 0 10px #ff9a9e;
+    }
+}
+
+/* Styling the dropdown container */
+.styled-select {
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    font-size: 16px;
+    background: #ffffff;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    appearance: none;
+}
+
+/* Style for the dropdown when open */
+.styled-select:focus {
+    outline: none;
+}
+
+/* Make the dropdown options visually display the background images */
+option {
+    padding: 10px;
+    font-size: 16px;
+}
+
+/* Set individual background images for each option */
+option[value="sunset"] {
+    background-image: url('images/sunset.avif');
+    background-size: cover;
+    color: white;
+}
+
+option[value="ocean"] {
+    background-image: url('images/ocean.avif');
+    background-size: cover;
+    color: white;
+}
+
+option[value="galaxy"] {
+    background-image: url('images/galaxy.avif');
+    background-size: cover;
+    color: white;
+}
+
+option[value="forest"] {
+    background-image: url('images/forest.avif');
+    background-size: cover;
+    color: white;
+}
